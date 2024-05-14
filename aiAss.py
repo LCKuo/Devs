@@ -2,7 +2,7 @@
 from openai import OpenAI
 
 # Point to the local server
-client = OpenAI(base_url="http://localhost:1234/v1", api_key="lm-studio")
+client = OpenAI(base_url="http://59.125.142.83:1234/v1", api_key="lm-studio")
 
 history = [
     {"role": "system", "content": "Please respond in Chinese only,and keep as concisely as possible. Your name is LC."},
@@ -11,7 +11,7 @@ history = [
 
 while True:
     completion = client.chat.completions.create(
-        model="TheBloke/deepseek-coder-6.7B-instruct-GGUF",
+        model="TheBloke/Phi-3-mini-4k-instruct-GGUF",
         messages=history,
         temperature=0.7,
         stream=True,
